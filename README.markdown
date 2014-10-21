@@ -1,0 +1,1 @@
+HasheadoAdminBundle documentation
