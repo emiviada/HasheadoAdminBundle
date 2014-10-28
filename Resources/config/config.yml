@@ -1,0 +1,47 @@
+sonata_user:
+    security_acl: true
+    manager_type: orm # can be orm or mongodb
+    profile:
+        # Customize user portal menu by setting links
+        menu:
+            - { route: 'sonata_user_profile_edit', label: 'link_edit_profile', domain: 'SonataUserBundle'}
+            - { route: 'sonata_user_profile_edit_authentication', label: 'link_edit_authentication', domain: 'SonataUserBundle'}
+
+sonata_block:
+    default_contexts: [admin]
+    blocks:
+        sonata.admin.block.admin_list:
+            contexts:   [admin]
+        #sonata.admin_doctrine_orm.block.audit:
+        #    contexts:   [admin]
+        #sonata.block.service.text:
+        #sonata.block.service.rss:
+        sonata.user.block.menu:    # used to display the menu in profile pages
+        sonata.user.block.account: # used to display menu option (login option)
+
+sonata_admin:
+    security:
+        handler: sonata.admin.security.handler.acl
+
+fos_user:
+    db_driver:      orm # can be orm or odm
+    firewall_name:  admin
+    user_class:     Application\Sonata\UserBundle\Entity\User
+
+    group:
+        group_class:   Application\Sonata\UserBundle\Entity\Group
+        group_manager: sonata.user.orm.group_manager                    # If you're using doctrine orm (use sonata.user.mongodb.user_manager for mongodb)
+
+    service:
+        user_manager: sonata.user.orm.user_manager                      # If you're using doctrine orm (use sonata.user.mongodb.group_manager for mongodb)
+
+doctrine:
+    dbal:
+        types:
+            json: Sonata\Doctrine\Types\JsonType
+    orm:
+        entity_managers:
+            default:
+                mappings:
+                    ApplicationSonataUserBundle: ~
+                    SonataUserBundle: ~
