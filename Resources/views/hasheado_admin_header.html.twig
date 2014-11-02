@@ -1,0 +1,61 @@
+{% block sonata_header %}
+    <header class="header">
+        
+        {% block sonata_header_noscript_warning %}
+            <noscript>
+                <div class="noscript-warning">
+                    {{ 'noscript_warning'|trans({}, 'SonataAdminBundle') }}
+                </div>
+            </noscript>
+        {% endblock %}
+        
+        {% block logo %}
+            {% spaceless %}
+            <a class="logo" href="{{ url('sonata_admin_dashboard') }}">
+                {% if 'single_image' == admin_pool.getOption('title_mode') or 'both' == admin_pool.getOption('title_mode') %}
+                    <img src="{{ asset(admin_pool.titlelogo) }}" alt="{{ admin_pool.title }}">
+                {% endif %}
+                {% if 'single_text' == admin_pool.getOption('title_mode') or 'both' == admin_pool.getOption('title_mode') %}
+                    <span>{{ admin_pool.title }}</span>
+                {% endif %}
+            </a>
+            {% endspaceless %}
+        {% endblock %}
+        
+        {% block sonata_nav %}
+            {% if admin_pool is defined %}
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+
+                    {% block sonata_top_nav_menu %}
+                        <div class="navbar-right">
+                            <ul class="nav navbar-nav">
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                        <i class="fa fa-plus-square fa-fw"></i> <i class="fa fa-caret-down"></i>
+                                    </a>
+                                    {% include admin_pool.getTemplate('add_block') %}
+                                </li>
+                                <li class="dropdown user user-menu">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                        <i class="glyphicon glyphicon-user"></i>
+                                        <span>{{ app.user }} <i class="caret"></i></span>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-user">
+                                        {% include admin_pool.getTemplate('user_block') %}
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    {% endblock %}
+                </nav>
+            {% endif %}
+        {% endblock sonata_nav %}
+
+    </header>
+{% endblock sonata_header %}

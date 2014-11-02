@@ -24,11 +24,14 @@ sonata_admin:
         handler: sonata.admin.security.handler.acl
     templates:
         layout:  HasheadoAdminBundle::hasheado_layout.html.twig
+        dashboard: HasheadoAdminBundle:Core:dashboard.html.twig
+        list: HasheadoAdminBundle:CRUD:list.html.twig
     assets:
         stylesheets:
             - http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css
             - http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css
             - bundles/hasheadoadmin/css/vendor/AdminLTE/AdminLTE.css
+            - bundles/hasheadoadmin/css/admin.css
 
 fos_user:
     db_driver:      orm # can be orm or odm
