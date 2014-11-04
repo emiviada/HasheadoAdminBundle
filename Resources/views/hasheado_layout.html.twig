@@ -64,7 +64,7 @@ file that was distributed with this source code.
         </title>
     </head>
     
-    <body {% block body_attributes %}class="skin-blue"{% endblock %}>
+    <body {% block body_attributes %}class="skin-black"{% endblock %}>
         {% if app.request.attributes.get('_route') == 'sonata_user_admin_security_login' %}
             {% if _content is not empty %}
                 {{ _content|raw }}
@@ -272,7 +272,10 @@ file that was distributed with this source code.
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
             <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" type="text/javascript"></script>
             <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.min.js" type="text/javascript"></script>
+            <script src="{{ asset('bundles/hasheadoadmin/js/plugins/datatables/jquery.dataTables.js') }}"></script>
+            <script src="{{ asset('bundles/hasheadoadmin/js/plugins/datatables/dataTables.bootstrap.js') }}"></script>
             <script src="{{ asset('bundles/hasheadoadmin/js/vendor/AdminLTE/app.js') }}"></script>
+            <script src="{{ asset('bundles/hasheadoadmin/js/admin.js') }}"></script>
         {% endblock %}
 
     </body>

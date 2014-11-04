@@ -12,6 +12,16 @@
 .mtd { margin-top: 10px !important; }
 .mbn { margin-bottom: 0 !important; }
 /** END Spacing **/
+
+/** List **/
+#list-table tfoot .dropdown-menu {
+    min-width: 114px;
+    width: 114px;
+}
+.sonata-ba-list {
+    padding-bottom: 30px;
+}
+/** END List **/
 /*
     END Core: General style
 ----------------------------
