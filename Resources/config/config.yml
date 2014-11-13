@@ -20,6 +20,7 @@ sonata_block:
         sonata.user.block.account: # used to display menu option (login option)
 
 sonata_admin:
+    title: Hasheado Admin
     security:
         handler: sonata.admin.security.handler.acl
     templates:

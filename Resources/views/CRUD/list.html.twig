@@ -27,19 +27,26 @@
             <div class="box-body collapse">
                 <form class="sonata-filter-form {{ admin.isChild and 1 == admin.datagrid.filters|length ? 'hide' : '' }}" action="{{ admin.generateUrl('list') }}" method="GET" role="form">
                     {{ form_errors(form) }}
-                        <div class="filter_container {{ admin.datagrid.hasActiveFilters ? 'active' : 'inactive' }}">
+                        <div class="filter_container row clearfix {{ admin.datagrid.hasActiveFilters ? 'active' : 'inactive' }}">
                             {% for filter in admin.datagrid.filters %}
-                                <div class="form-group">
+                                <div class="form-group col-md-4">
                                     <label for="{{ form.children[filter.formName].children['value'].vars.id }}">{{ admin.trans(filter.label, {}, filter.translationDomain) }}</label>
                                     {% set attr = form.children[filter.formName].children['type'].vars.attr|default({}) %}
                                     {% set attr = attr|merge({'class': (attr.class|default('') ~ ' sonata-filter-option')|trim}) %}
 
-                                    <div>
-                                        {{ form_widget(form.children[filter.formName].children['type'], {'attr':  attr}) }}
-                                    </div>
+                                    <div class="row">
+                                        {% if filter.options['field_type'] != 'sonata_type_boolean' %}
+                                            <div class="col-md-6">
+                                                {{ form_widget(form.children[filter.formName].children['type'], {'attr':  attr}) }}
+                                            </div>
+                                        {% else %}
+                                            {{ form_widget(form.children[filter.formName].children['type'], {'attr':  attr}) }}
+                                        {% endif %}
 
-                                    <div>
-                                        {{ form_widget(form.children[filter.formName].children['value']) }}
+                                        {% set class = (filter.options['field_type'] != 'sonata_type_boolean')? 'col-md-6' : 'col-md-12' %}
+                                        <div class="{{ class }}">
+                                            {{ form_widget(form.children[filter.formName].children['value']) }}
+                                        </div>
                                     </div>
                                 </div>
                             {% endfor %}
@@ -49,9 +56,15 @@
                             {% set foo = form.children['_page'].setRendered() %}
                             {{ form_rest(form) }}
 
-                            <button type="submit" class="btn btn-primary"><i class="fa fa-filter"></i> {{ 'btn_filter'|trans({}, 'SonataAdminBundle') }}</button>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="pull-right">
+                                    <button type="submit" class="btn btn-primary"><i class="fa fa-filter"></i> {{ 'btn_filter'|trans({}, 'SonataAdminBundle') }}</button>
 
-                            <a class="btn btn-default" href="{{ admin.generateUrl('list', {filters: 'reset'}) }}">{{ 'link_reset_filter'|trans({}, 'SonataAdminBundle') }}</a>
+                                    <a class="btn btn-default" href="{{ admin.generateUrl('list', {filters: 'reset'}) }}">{{ 'link_reset_filter'|trans({}, 'SonataAdminBundle') }}</a>
+                                </div>
+                            </div>
                         </div>
 
                         {% for paramKey, paramValue in admin.persistentParameters %}
@@ -153,6 +166,10 @@
                                                 {% endif %}
 
                                                 <div class="pull-right">
+                                                    <a href="{{ admin.generateUrl('create') }}" class="btn btn-success">
+                                                        <i class="fa fa-plus"></i>
+                                                        {{ 'link_action_create'|trans({}, 'SonataAdminBundle') }}
+                                                    </a> &nbsp;
                                                     {% if admin.hasRoute('export') and admin.isGranted("EXPORT") and admin.getExportFormats()|length %}
                                                         <div class="btn-group">
                                                             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
@@ -178,13 +195,6 @@
                                         </div>
                                     </th>
                                 </tr>
-
-                                {% block pager_links %}
-                                    {% if admin.datagrid.pager.haveToPaginate() %}
-                                        {% include admin.getTemplate('pager_links') %}
-                                    {% endif %}
-                                {% endblock %}
-
                             </tfoot>
                         {% endblock %}
                     </table>
