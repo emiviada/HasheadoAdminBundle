@@ -40,4 +40,7 @@ $(function() {
         })
         .trigger('ifChanged')
     ;
+
+    // Multiple select
+    $('select[multiple="multiple"]').multipleSelect();
 });

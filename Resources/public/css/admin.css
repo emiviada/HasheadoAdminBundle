@@ -22,6 +22,18 @@
     padding-bottom: 30px;
 }
 /** END List **/
+
+/** Forms **/
+.sonata-ba-collapsed-fields {
+    width: 100%;
+}
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .sonata-ba-collapsed-fields {
+        width: 50%;
+    }
+}
+/** END Forms **/
 /*
     END Core: General style
 ----------------------------
