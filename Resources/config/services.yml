@@ -1,4 +1,9 @@
 services:
+    hasheado.admin.user.extension:
+        class: Hasheado\AdminBundle\AdminExtension\UserAdminExtension
+        tags:
+            - { name: sonata.admin.extension, target: sonata.user.admin.user }
+
     hasheado.admin.group.extension:
         class: Hasheado\AdminBundle\AdminExtension\GroupAdminExtension
         tags:

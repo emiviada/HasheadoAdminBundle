@@ -43,4 +43,9 @@ $(function() {
 
     // Multiple select
     $('select[multiple="multiple"]').multipleSelect();
+
+    // Date picker
+    $('.sonata-medium-date').datetimepicker({
+        pickTime: false
+    });
 });
