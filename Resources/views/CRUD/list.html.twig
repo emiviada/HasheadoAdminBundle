@@ -14,17 +14,20 @@
 {% block list_filters %}
     {% if admin.datagrid.filters %}
         {% form_theme form admin.getTemplate('filter') %}
-        <div class="box collapsed-box">
+        {% set collapsedClass = (app.request.get('filter') is null)? 'collapsed-box' : '' %}
+        <div class="box {{ collapsedClass }}">
             <div class="box-header">
                 <h3 class="box-title filter_legend {{ admin.datagrid.hasActiveFilters ? 'active' : 'inactive' }}">{{ 'label_filters'|trans({}, 'SonataAdminBundle') }}</h3>
                 <!-- tools box -->
                 <div class="pull-right box-tools">
-                    <button class="btn btn-default btn-sm" data-widget='collapse' data-toggle="tooltip" title="Collapse"><i class="fa fa-plus"></i></button>
+                    {% set icon = (app.request.get('filter') is null)? 'fa-plus' : 'fa-minus' %}
+                    <button class="btn btn-default btn-sm" data-widget='collapse' data-toggle="tooltip" title="Collapse"><i class="fa {{ icon }}"></i></button>
                     <button class="btn btn-default btn-sm" data-widget='remove' data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
                 </div><!-- /. tools -->
             </div>
 
-            <div class="box-body collapse">
+            {% set collapseClass = (app.request.get('filter') is null)? 'collapse' : '' %}
+            <div class="box-body {{ collapseClass }}">
                 <form class="sonata-filter-form {{ admin.isChild and 1 == admin.datagrid.filters|length ? 'hide' : '' }}" action="{{ admin.generateUrl('list') }}" method="GET" role="form">
                     {{ form_errors(form) }}
                         <div class="filter_container row clearfix {{ admin.datagrid.hasActiveFilters ? 'active' : 'inactive' }}">
