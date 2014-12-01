@@ -2,6 +2,9 @@ hasheado_admin:
     resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
     prefix: /admin
 
+hasheado_admin_logout:
+    path: /admin/logout
+
 sonata_user:
     resource: '@SonataUserBundle/Resources/config/routing/admin_security.xml'
     prefix: /admin

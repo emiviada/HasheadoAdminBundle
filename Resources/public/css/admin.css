@@ -27,6 +27,11 @@
 .sonata-ba-collapsed-fields {
     width: 100%;
 }
+.remember_me {
+    font-weight: normal;
+    cursor: pointer;
+    margin-bottom: 0;
+}
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
     .sonata-ba-collapsed-fields {

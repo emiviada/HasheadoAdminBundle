@@ -107,6 +107,7 @@ security:
                 failure_path:   null
             logout:
                 path:           /admin/logout
+                target:         /admin
             anonymous:          true
 
         # -> end custom configuration
