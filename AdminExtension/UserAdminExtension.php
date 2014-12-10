@@ -21,7 +21,10 @@ class UserAdminExtension extends AdminExtension
                     'multiple' => true,
                     'btn_add' => false
             ))
-            ->add('dateOfBirth', 'sonata_type_date_picker', array('required' => false));
+            ->add('dateOfBirth', 'sonata_type_date_picker', array(
+                'required' => false,
+                'format' => 'yyyy-MM-dd'
+            ));
 
         $formMapper
             ->add('realRoles', 'sonata_security_roles', array(

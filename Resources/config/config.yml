@@ -68,6 +68,11 @@ doctrine:
 swiftmailer:
     transport: mail
 
+twig:
+    form:
+        resources:
+            - 'HasheadoAdminBundle:Form:datepicker.html.twig'
+
 parameters:
     sonata.user.admin.user.class: Hasheado\AdminBundle\Admin\UserAdmin
     sonata.user.admin.group.class: Hasheado\AdminBundle\Admin\GroupAdmin

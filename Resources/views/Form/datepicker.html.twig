@@ -1,0 +1,19 @@
+{#
+This file is part of the Hasheado Admin bundle package.
+Emiliano Viada
+#}
+{% block sonata_type_date_picker_widget %}
+    {% spaceless %}
+        <div class="form-group">
+            {% if datepicker_use_button %}
+                <div class='input-group date' id='{{ id }}' data-date-format="{{ moment_format }}">
+            {% endif %}
+            {% set attr = attr|merge({'data-date-format': moment_format}) %}
+            {{ block('date_widget') }}
+            {% if datepicker_use_button %}
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                </div>
+            {% endif %}
+        </div>
+    {% endspaceless %}
+{% endblock sonata_type_date_picker_widget %}
