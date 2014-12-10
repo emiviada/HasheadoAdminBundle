@@ -50,6 +50,10 @@ fos_user:
     service:
         user_manager: sonata.user.orm.user_manager                      # If you're using doctrine orm (use sonata.user.mongodb.group_manager for mongodb)
 
+    from_email:
+        address:        noreply@adminbundle.com
+        sender_name:    Hasheado Admin Bundle
+
 doctrine:
     dbal:
         types:
@@ -60,6 +64,9 @@ doctrine:
                 mappings:
                     ApplicationSonataUserBundle: ~
                     SonataUserBundle: ~
+
+swiftmailer:
+    transport: mail
 
 parameters:
     sonata.user.admin.user.class: Hasheado\AdminBundle\Admin\UserAdmin

@@ -31,9 +31,8 @@ class="bg-black"
 
             <div class="footer">
                 <input type="submit" class="btn bg-olive btn-block" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
-                <!--<p><a href="#">I forgot my password</a></p>
-                    
-                <a href="register.html" class="text-center">Register a new membership</a>-->
+                <p><a href="{{ path("sonata_user_resetting_request") }}">{{ 'security.login.forgot_password'|trans({}, 'HasheadoAdminBundle') }}</a></p>
+                <!--<a href="register.html" class="text-center">Register a new membership</a>-->
             </div>
         </form>
 

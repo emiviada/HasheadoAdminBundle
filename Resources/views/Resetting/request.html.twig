@@ -1,0 +1,26 @@
+{% extends 'HasheadoAdminBundle::hasheado_layout_no_sonata.html.twig' %}
+{% block body_attributes %}
+class="bg-black"
+{% endblock %}
+
+{% block fos_user_content %}
+<div class="form-box" id="login-box">
+    <div class="header">{{ 'security.login.forgot_password'|trans({}, 'HasheadoAdminBundle') }}</div>
+    <form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request">
+        <div class="body bg-gray">
+            {% if invalid_username is defined %}
+                <p class="text-red">{{ 'resetting.request.invalid_username'|trans({'%username%': invalid_username}, 'FOSUserBundle') }}</p>
+            {% endif %}
+            <div class="form-group">
+                <input type="text" class="form-control" id="username" name="username" required="required" placeholder="{{ 'resetting.request.username'|trans({}, 'FOSUserBundle') }}" />
+            </div>
+        </div>
+        <div class="footer">
+            <input type="submit" class="btn bg-olive btn-block" value="{{ 'resetting.request.submit'|trans({}, 'FOSUserBundle') }}" />
+            <p class="text-center">
+                <a href="{{ path('sonata_user_admin_security_login') }}">{{ 'resetting.request.cancel'|trans({}, 'HasheadoAdminBundle') }}</a>
+            </p>
+        </div>
+    </form>
+</div>
+{% endblock fos_user_content %}

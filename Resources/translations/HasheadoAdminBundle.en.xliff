@@ -14,6 +14,14 @@
                 <source>security.login.password</source>
                 <target>Password</target>
             </trans-unit>
+            <trans-unit id="security.login.forgot_password">
+                <source>security.login.forgot_password</source>
+                <target>Forgot your password?</target>
+            </trans-unit>
+            <trans-unit id="resetting.request.cancel">
+                <source>resetting.request.cancel</source>
+                <target>Cancel</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
