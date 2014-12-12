@@ -111,6 +111,9 @@ security:
 
         # -> end custom configuration
 
+    acl:
+        connection: default
+
     access_control:
         # Admin login page needs to be access without credential
         - { path: ^/admin/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
@@ -130,11 +133,6 @@ You need to update the schema:
 php app/console doctrine:schema:update --force
 ```
 
-Also you need to install the ACL tables:
-```bash
-php app/console init:acl
-```
-
 and create a new root user:
 ```bash
 php app/console fos:user:create --super-admin
@@ -147,6 +145,10 @@ To be able to access HasheadoAdminBundle’s pages, you need to add its routes t
 admin:
     resource: '@HasheadoAdminBundle/Resources/config/routing.yml'
 
+```
+Finally, publish the assets:
+```bash
+php app/console assets:install
 ```
 
 At this point you can already access the (empty) admin dashboard by visiting the url: http://yoursite.local/admin/dashboard.
