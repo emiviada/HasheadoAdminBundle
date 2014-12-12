@@ -25,6 +25,5 @@
     "autoload": {
         "psr-4": { "Hasheado\\AdminBundle": "" }
     },
-    "minimum-stability": "dev",
-    "target-dir": "Hasheado/AdminBundle"
+    "minimum-stability": "dev"
 }
