@@ -16,7 +16,7 @@
         "symfony/framework-bundle": ">=2.3",
         "sonata-project/admin-bundle": "~2.3",
         "sonata-project/doctrine-orm-admin-bundle": "~2.3",
-        "sonata-project/easy-extends-bundle": "dev-master",
+        "sonata-project/easy-extends-bundle": "~2.1.9",
         "sonata-project/user-bundle": "2.2.x"
     },
     "require-dev": {
