@@ -17,9 +17,12 @@ sonata_block:
             contexts:   [admin]
         sonata.user.block.menu:    # used to display the menu in profile pages
         sonata.user.block.account: # used to display menu option (login option)
+        sonata.admin.block.search_result:
+            contexts: [admin]
 
 sonata_admin:
     title: Hasheado Admin
+    title_logo: 'http://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif'
     security:
         handler: sonata.admin.security.handler.acl
     templates:
@@ -28,6 +31,8 @@ sonata_admin:
         list: HasheadoAdminBundle:CRUD:list.html.twig
         edit: HasheadoAdminBundle:CRUD:edit.html.twig
         user_block: HasheadoAdminBundle:Block:account.html.twig
+        search:              SonataAdminBundle:Core:search.html.twig
+        search_result_block: SonataAdminBundle:Block:block_search_result.html.twig
     assets:
         stylesheets:
             - http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css

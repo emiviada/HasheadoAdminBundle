@@ -48,4 +48,12 @@ $(function() {
     $('.sonata-medium-date').datetimepicker({
         pickTime: false
     });
+
+    // Search functionality
+    $('.search-btn').on('click', function(e) {
+        var value = $('input[name="q"]').val();
+        if (value === '') {
+            e.preventDefault();
+        }
+    });
 });

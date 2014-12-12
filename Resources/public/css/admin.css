@@ -23,6 +23,12 @@
 }
 /** END List **/
 
+/** List **/
+.alert {
+    margin-left: 0;
+}
+/** END List **/
+
 /** Forms **/
 .sonata-ba-collapsed-fields {
     width: 100%;
@@ -32,14 +38,22 @@
     cursor: pointer;
     margin-bottom: 0;
 }
+/** END Forms **/
+/*
+    END Core: General style
+----------------------------
+*/
+/*
+    Breakpoints
+----------------------------
+*/
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
     .sonata-ba-collapsed-fields {
         width: 50%;
     }
 }
-/** END Forms **/
 /*
-    END Core: General style
+    END Breakpoints
 ----------------------------
 */

@@ -22,6 +22,10 @@
                 <source>resetting.request.cancel</source>
                 <target>Cancel</target>
             </trans-unit>
+            <trans-unit id="profile.last_login">
+                <source>profile.last_login</source>
+                <target>Last Login</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

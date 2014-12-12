@@ -1,4 +1,9 @@
 <!-- Menu Footer-->
+<li class="user-body">
+    <div class="col-xs-12 text-left">
+        {{ 'profile.last_login' | trans({}, "HasheadoAdminBundle") }}: {{ app.user.lastLogin.format('Y-m-d H:i:s') }}
+    </div>
+</li>
 <li class="user-footer">
     <div class="pull-left">
         <!--<a href="#" class="btn btn-default btn-flat">Profile</a>--> 
