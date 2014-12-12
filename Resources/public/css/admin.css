@@ -23,11 +23,11 @@
 }
 /** END List **/
 
-/** List **/
+/** Flash messages **/
 .alert {
     margin-left: 0;
 }
-/** END List **/
+/** END Flash messages **/
 
 /** Forms **/
 .sonata-ba-collapsed-fields {
@@ -38,7 +38,17 @@
     cursor: pointer;
     margin-bottom: 0;
 }
+.list-unstyled li {
+    display: inline-block;
+    margin: 0 5px;
+}
 /** END Forms **/
+
+/** Select2 **/
+.select2-container {
+    display: block;
+}
+/** END Select2 **/
 /*
     END Core: General style
 ----------------------------

@@ -44,6 +44,9 @@ $(function() {
     // Multiple select
     $('select[multiple="multiple"]').multipleSelect();
 
+    // 
+    $('select[id*="locale"], select[id*="timezone"]').select2();
+
     // Date picker
     $('.sonata-medium-date').datetimepicker({
         pickTime: false
