@@ -11,6 +11,6 @@ class HasheadoAdminBundle extends Bundle
      */
     public function getParent()
     {
-        return 'ApplicationSonataUserBundle';
+        return 'SonataUserBundle';
     }
 }

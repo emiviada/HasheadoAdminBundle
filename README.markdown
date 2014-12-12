@@ -6,7 +6,7 @@ Step 1: Download the Bundle
 
 NOTE: This bundle depends in the [SonataAdminBundle](http://sonata-project.org/bundles/admin/2-3/doc/index.html), [SonataUserBundle](http://sonata-project.org/bundles/user/master/doc/reference/installation.html) and in the [SonataDoctrineORMAdminBundle](http://sonata-project.org/bundles/doctrine-orm-admin/master/doc/reference/installation.html).
 
-Open a command console, enter your project directory and execute the
+In an already working Symfony installation open a command console, enter your project directory and execute the
 following command to download the latest stable version of this bundle:
 
 ```bash
@@ -20,9 +20,7 @@ of the Composer documentation.
 Step 2: Enable the Bundle
 -------------------------
 
-Before to enable the bundles we have to configure the [SonataBlockBundle](http://sonata-project.org/bundles/block/master/doc/reference/installation.html#configuration).
-
-Then, enable the bundle by adding the following line in the `app/AppKernel.php`
+To enable the bundle we need to add the following line in the `app/AppKernel.php`
 file of your project:
 
 ```php
@@ -70,11 +68,12 @@ Import the HasheadoAdminBundle’s config files:
 # app/config/config.yml
 imports:
  - { resource: @HasheadoAdminBundle/Resources/config/config.yml }
- ```yml
+ ```
 
 Then you need to add the below security configuration:
 
 ```yml
+# app/config/security.yml
 security:
     role_hierarchy:
         ROLE_ADMIN:       [ROLE_USER, ROLE_SONATA_ADMIN]
@@ -124,54 +123,7 @@ security:
         - { path: ^/.*, role: IS_AUTHENTICATED_ANONYMOUSLY }
 ```
 
-Then replace the following lines in the @HasheadoAdminBundle/Resources/config/config.yml file:
-- Replace:
-```yml
-fos_user:
-    user_class:     Sonata\UserBundle\Entity\BaseUser
-    group:
-        group_class:   Sonata\UserBundle\Entity\Group
-
-doctrine:
-    orm:
-        entity_managers:
-            default:
-                mappings:
-                    #ApplicationSonataUserBundle: ~
-```
-
-with:
-```yml
-fos_user:
-    user_class:     Application\Sonata\UserBundle\Entity\User
-    group:
-        group_class:   Application\Sonata\UserBundle\Entity\Group
-
-doctrine:
-    orm:
-        entity_managers:
-            default:
-                mappings:
-                    ApplicationSonataUserBundle: ~
-```
-
-At this point, the bundle is functional, but not quite ready yet. You need to generate the correct entities for the media:
-
-```bash
-php app/console sonata:easy-extends:generate SonataUserBundle -d src
-```
-
-Now, add the new Application Bundle into the kernel:
-
-```php
-return array(
-    // Application Bundles
-    // ...
-    new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
-    // ...
-
-)
-```
+At this point, the bundle is functional, but not quite ready yet.
 
 You need to update the schema:
 ```bash

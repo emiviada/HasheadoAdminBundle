@@ -68,7 +68,6 @@ doctrine:
         entity_managers:
             default:
                 mappings:
-                    ApplicationSonataUserBundle: ~
                     SonataUserBundle: ~
 
 swiftmailer:
