@@ -23,7 +23,7 @@
         
     },
     "autoload": {
-        "psr-4": { "Hasheado\\AdminBundle": "" }
+        "psr-4": { "Hasheado\\AdminBundle\\": "" }
     },
     "minimum-stability": "dev"
 }
