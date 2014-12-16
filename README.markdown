@@ -151,4 +151,4 @@ Finally, publish the assets:
 php app/console assets:install
 ```
 
-At this point you can already access the (empty) admin dashboard by visiting the url: http://yoursite.local/admin/dashboard.
+At this point you can already access the (empty) admin dashboard by visiting the url: http://yoursite.local/admin/dashboard. And, start adding your admins following [SonataAdminBundle](http://sonata-project.org/bundles/admin/2-3/doc/index.html) documentation.
