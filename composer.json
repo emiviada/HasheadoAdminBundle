@@ -2,7 +2,7 @@
     "name": "hasheado/admin-bundle",
     "type": "symfony-bundle",
     "description": "Symfony2 bundle based on SonataAdminBundle to generate admins",
-    "keywords": ["synfony", "bundle", "admin", "admin generator"],
+    "keywords": ["symfony", "bundle", "admin", "admin generator"],
     "homepage": "http://github.com/Hasheado/AdminBundle",
     "license": "MIT",
     "authors": [
@@ -25,5 +25,9 @@
     "autoload": {
         "psr-4": { "Hasheado\\AdminBundle\\": "" }
     },
-    "minimum-stability": "dev"
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
 }
