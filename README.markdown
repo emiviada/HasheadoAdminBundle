@@ -6,11 +6,19 @@ Step 1: Download the Bundle
 
 NOTE: This bundle depends in the [SonataAdminBundle](http://sonata-project.org/bundles/admin/2-3/doc/index.html), [SonataUserBundle](http://sonata-project.org/bundles/user/master/doc/reference/installation.html) and in the [SonataDoctrineORMAdminBundle](http://sonata-project.org/bundles/doctrine-orm-admin/master/doc/reference/installation.html).
 
-In an already working Symfony installation open a command console, enter your project directory and execute the
+In an already working Symfony installation edit your composer.json file and add this line:
+
+```bash
+require: {
+    "hasheado/admin-bundle": "dev-master"
+}
+```
+
+and then, open a command console, enter your project directory and execute the
 following command to download the latest stable version of this bundle:
 
 ```bash
-$ composer require hasheado/admin-bundle
+$ composer update
 ```
 
 This command requires you to have Composer installed globally, as explained
