@@ -59,4 +59,7 @@ $(function() {
             e.preventDefault();
         }
     });
+
+    //bootstrap WYSIHTML5 - text editor
+    $(".wysihtml5").wysihtml5();
 });

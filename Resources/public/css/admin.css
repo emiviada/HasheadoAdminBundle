@@ -49,6 +49,11 @@
     display: block;
 }
 /** END Select2 **/
+
+.wysihtml5 {
+    height: 250px !important;
+}
+
 /*
     END Core: General style
 ----------------------------
