@@ -26,6 +26,14 @@
                 <source>profile.last_login</source>
                 <target>Último acceso</target>
             </trans-unit>
+            <trans-unit id="link_logout">
+                <source>link_logout</source>
+                <target>Salir</target>
+            </trans-unit>
+            <trans-unit id="hello">
+                <source>hello</source>
+                <target>Hola</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

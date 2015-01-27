@@ -83,7 +83,7 @@ file that was distributed with this source code.
                                 {% block sonata_side_nav %}
                                     <div class="user-panel">
                                         <div class="pull-left info">
-                                            <p>Hello, {{ app.user }}</p>
+                                            <p>{{ 'hello' | trans({}, "HasheadoAdminBundle") }}, {{ app.user }}</p>
                                             <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                                         </div>
                                     </div>

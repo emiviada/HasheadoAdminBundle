@@ -26,6 +26,10 @@
                 <source>profile.last_login</source>
                 <target>Last Login</target>
             </trans-unit>
+            <trans-unit id="hello">
+                <source>hello</source>
+                <target>Hello</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
