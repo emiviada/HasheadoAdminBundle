@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="es" datatype="plaintext" original="" >
+        <body>
+            <trans-unit id="security.login">
+                <source>security.login</source>
+                <target>Ingresar</target>
+            </trans-unit>
+            <trans-unit id="security.login.username">
+                <source>security.login.username</source>
+                <target>Usuario</target>
+            </trans-unit>
+            <trans-unit id="security.login.password">
+                <source>security.login.password</source>
+                <target>Contraseña</target>
+            </trans-unit>
+            <trans-unit id="security.login.forgot_password">
+                <source>security.login.forgot_password</source>
+                <target>¿Olvidaste tu contraseña?</target>
+            </trans-unit>
+            <trans-unit id="resetting.request.cancel">
+                <source>resetting.request.cancel</source>
+                <target>Cancelar</target>
+            </trans-unit>
+            <trans-unit id="profile.last_login">
+                <source>profile.last_login</source>
+                <target>Último acceso</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
