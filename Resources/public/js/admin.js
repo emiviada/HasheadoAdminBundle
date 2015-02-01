@@ -48,8 +48,11 @@ $(function() {
     $('select[id*="locale"], select[id*="timezone"]').select2();
 
     // Date picker
-    $('.sonata-medium-date').datetimepicker({
+    $('.datepicker').datetimepicker({
         pickTime: false
+    });
+    $('.datetimepicker').datetimepicker({
+        pickTime: true
     });
 
     // Search functionality
