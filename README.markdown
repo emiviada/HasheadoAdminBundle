@@ -76,8 +76,19 @@ Import the HasheadoAdminBundle’s config files:
 # app/config/config.yml
 imports:
  - { resource: @HasheadoAdminBundle/Resources/config/config.yml }
+
+ sonata_user:
+    class:
+        user: pathToYourBundle\Entity\User
+        group: pathToYourBundle\Entity\Group
+
+fos_user:
+    user_class:     pathToYourBundle\Entity\User
+    group:
+        group_class:   pathToYourBundle\Entity\Group
  ```
 
+Of course, replace the path to your User and/or Group entities.
 Then you need to add the below security configuration:
 
 ```yml
