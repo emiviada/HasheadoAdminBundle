@@ -88,7 +88,9 @@ fos_user:
         group_class:   pathToYourBundle\Entity\Group
  ```
 
-Of course, replace the path to your User and/or Group entities.
+Of course, replace the path to your User and/or Group entities, and do not forget to make your classes extend the Sonata\UserBundle\Entity\BaseUser and the Sonata\UserBundle\Entity\BaseGroup classes.
+
+
 Then you need to add the below security configuration:
 
 ```yml
