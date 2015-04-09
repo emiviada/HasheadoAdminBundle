@@ -83,9 +83,19 @@ imports:
         group: pathToYourBundle\Entity\Group
 
 fos_user:
+    db_driver:      orm # can be orm or odm
+    firewall_name:  admin
     user_class:     pathToYourBundle\Entity\User
     group:
         group_class:   pathToYourBundle\Entity\Group
+        group_manager: sonata.user.orm.group_manager  # If you're using doctrine orm (use sonata.user.mongodb.user_manager for mongodb)
+
+    service:
+        user_manager: sonata.user.orm.user_manager    # If you're using doctrine orm (use sonata.user.mongodb.group_manager for mongodb)
+
+    from_email:
+        address:        noreply@adminbundle.com
+        sender_name:    Hasheado Admin Bundle
  ```
 
 Of course, replace the path to your User and/or Group entities, and do not forget to make your classes extend the Sonata\UserBundle\Entity\BaseUser and the Sonata\UserBundle\Entity\BaseGroup classes.
